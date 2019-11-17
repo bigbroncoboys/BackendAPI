@@ -1,7 +1,7 @@
 const knex = require('../../../database');
 
 const info = async (req, res) => {
-    const accountID = req.body.accountID;
+    const accountID = req.params.accountID;
 
     const infoRes = await knex('business_info').select().where({ account_id: accountID }).limit(1);
     const emplRes = await knex('employees').select('name').where({ account_id: accountID });
