@@ -13,7 +13,7 @@ const login = async (req, res) => {
 
     const valid = bcrypt.compareSync(password, accRes[0].password);
 
-    res.json({ success: valid });
+    res.json({ success: valid, accountID: accRes[0].id });
 }
 
 module.exports = login
