@@ -7,7 +7,9 @@ const login = async (req, res) => {
 
     const accRes = await knex('accounts').select().where({ email: email }).limit(1);
 
-    console.log(accRes);
+    if (accRes.length === 0) {
+        return res.json({ success: false });
+    }
 
     const valid = bcrypt.compareSync(password, accRes[0].password);
 
