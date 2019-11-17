@@ -2,6 +2,8 @@ const knex = require('../../../database');
 const bcrypt = require('bcrypt');
 
 const login = async (req, res) => {
+    console.log(req.body);
+
     const email = req.body.email;
     const password = req.body.password;
 
