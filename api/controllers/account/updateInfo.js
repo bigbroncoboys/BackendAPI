@@ -9,7 +9,6 @@ const updateInfo = async (req, res) => {
     const employees = req.body.employees; // Array
 
     if (typeof businessName !== 'undefined') {
-        console.log(businessName);
         await knex('business_info').update({ name: businessName }).where({ account_id: accountID });
     }
 
