@@ -1,6 +1,6 @@
 const knex = require('../../../database');
 
-const info = async (req, res) => {
+const getInfo = async (req, res) => {
     const accountID = req.params.accountID;
 
     const infoRes = await knex('business_info').select().where({ account_id: accountID }).limit(1);
@@ -20,4 +20,4 @@ const info = async (req, res) => {
     res.json(accountInfo);
 }
 
-module.exports = info
+module.exports = getInfo

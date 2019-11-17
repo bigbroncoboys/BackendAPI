@@ -1,7 +1,7 @@
 const knex = require('../../../database');
 const bcrypt = require('bcrypt');
 
-const create = async (req, res) => {
+const createAccount = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const businessName = req.body.businessName;
@@ -28,4 +28,4 @@ const create = async (req, res) => {
     res.send();
 }
 
-module.exports = create
+module.exports = createAccount
