@@ -25,7 +25,7 @@ const createAccount = async (req, res) => {
         await knex('employees').insert({ account_id: accountID, name: employee });
     }
 
-    res.send();
+    res.end();
 }
 
 module.exports = createAccount

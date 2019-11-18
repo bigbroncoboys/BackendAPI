@@ -7,24 +7,28 @@ const processCharge = async (req, res) => {
     const cardCVC = req.body.cardCVC;
     const amount = req.body.amount;
 
-    const token = await stripe.tokens.create({
-        card: {
-            number: cardNumber,
-            exp_month: cardExpMonth,
-            exp_year: cardExpYear,
-            cvc: cardCVC,
-        }
-    });
+    try {
+        const token = await stripe.tokens.create({
+            card: {
+                number: cardNumber,
+                exp_month: cardExpMonth,
+                exp_year: cardExpYear,
+                cvc: cardCVC,
+            }
+        });
 
-    await stripe.charges.create(
-        {
-            amount: amount,
-            currency: 'usd',
-            source: token.id
-        }
-    );
+        await stripe.charges.create(
+            {
+                amount: amount,
+                currency: 'usd',
+                source: token.id
+            }
+        );
 
-    res.end();
+        res.json({ success: true });
+    } catch {
+        res.json({ success: false });
+    }
 }
 
 module.exports = processCharge
