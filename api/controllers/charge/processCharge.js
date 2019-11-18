@@ -26,7 +26,8 @@ const processCharge = async (req, res) => {
         );
 
         res.json({ success: true });
-    } catch {
+    } catch (e) {
+        console.error(e);
         res.json({ success: false });
     }
 }
