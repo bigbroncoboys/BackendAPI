@@ -1,4 +1,4 @@
-const stripe = require('stripe')('sk_test_TjKyrQkUUknGVTgXRhFyGgZS00eMv0kO65');
+const stripe = require('stripe')('sk_test_XfSN5Jg519ofs2eCCZny9bUg000Vt1SumR');
 
 const processCharge = async (req, res) => {
     const cardNumber = req.body.cardNumber;
