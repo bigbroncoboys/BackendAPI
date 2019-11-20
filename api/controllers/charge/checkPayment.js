@@ -7,7 +7,7 @@ const checkPayment = async (req, res) => {
 
     console.log('Requested ' + Date.now());
 
-    res.json(dbRes[0]);
+    res.json({ processed: dbRes[0].processed });
 }
 
 module.exports = checkPayment
