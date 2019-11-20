@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const chargeRouter = Router();
 
-chargeRouter.post('/process', require('../controllers/charge/processCharge'));
+chargeRouter.post('/createCheckout', require('../controllers/charge/createCheckout'));
 
 module.exports = chargeRouter
