@@ -1,7 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const https = require('https');
-const fs = require('fs');
 const app = express();
 const port = 80;
 
@@ -18,14 +16,4 @@ app.use('/api/charge', require('./api/routes/charge'));
 
 app.use('/', require('./views'));
 
-if (fs.existsSync('server.key')) {
-    https.createServer({
-        key: fs.readFileSync('server.key'),
-        cert: fs.readFileSync('server.cert')
-    }, app)
-        .listen(port, function () {
-            console.log(`Listening on port ${port}!`)
-        })
-} else {
-    app.listen(port, () => console.log(`Listening on port ${port}!`));
-}
+app.listen(port, () => console.log(`Listening on port ${port}!`));
