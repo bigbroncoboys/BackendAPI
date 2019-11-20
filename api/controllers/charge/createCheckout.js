@@ -4,6 +4,8 @@ const knex = require('../../../database');
 const createCheckout = async (req, res) => {
     const checkoutItems = req.body.checkoutItems;
 
+    console.log(checkoutItems)
+
     // [{
     //     name: 'T-shirt',
     //     amount: 500,
