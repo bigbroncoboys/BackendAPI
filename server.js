@@ -3,8 +3,11 @@ const bodyParser = require('body-parser');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
+const secure = require('express-force-https');
+
 const app = express();
 
+app.use(secure);
 app.use(bodyParser.json());
 app.use('/assets', express.static('views/assets'))
 app.set('view engine', 'ejs');
