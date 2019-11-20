@@ -24,7 +24,7 @@ if (fs.existsSync('server.key')) {
         cert: fs.readFileSync('server.cert')
     }, app)
         .listen(port, function () {
-            console.log('Listening on port ${port}!')
+            console.log(`Listening on port ${port}!`)
         })
 } else {
     app.listen(port, () => console.log(`Listening on port ${port}!`));
