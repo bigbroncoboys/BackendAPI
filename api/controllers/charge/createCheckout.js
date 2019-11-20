@@ -7,8 +7,8 @@ const createCheckout = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items: checkoutItems,
-        success_url: 'http://sendmoney.dev/success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'http://sendmoney.dev/cancel',
+        success_url: 'https://sendmoney.dev/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'https://sendmoney.dev/cancel',
     });
 
     await knex('payment_sessions').insert({ session_id: session.id });
