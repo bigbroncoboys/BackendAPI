@@ -19,8 +19,9 @@ app.use('/api/charge', require('./api/routes/charge'));
 app.use('/', require('./views'));
 
 const options = {
-    key: fs.readFileSync('cert/server.key'),
-    cert: fs.readFileSync('cert/server.cert')
+    key: fs.readFileSync('/etc/letsencrypt/live/sendmoney.dev/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/sendmoney.dev/cert.pem'),
+    ca: fs.readFileSync('/etc/letsencrypt/live/sendmoney.dev/chain.pem')
 };
 
 http.createServer(app).listen(80);
