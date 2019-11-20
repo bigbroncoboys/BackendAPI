@@ -1,4 +1,4 @@
-const STRIPE_PUBLISHABLE_KEY = 'pk_test_86lwwdfZzvZEwdziYQQuZvVY000eaeQdDf';
-const STRIPE_SECRET_KEY = 'sk_test_TjKyrQkUUknGVTgXRhFyGgZS00eMv0kO65';
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_xInOIuq3RafRlvHBKB51I2gi00pgXQ2TKj';
+const STRIPE_SECRET_KEY = 'sk_test_XfSN5Jg519ofs2eCCZny9bUg000Vt1SumR';
 
 module.exports = { STRIPE_PUBLISHABLE_KEY, STRIPE_SECRET_KEY }
