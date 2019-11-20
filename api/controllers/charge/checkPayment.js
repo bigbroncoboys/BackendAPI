@@ -5,6 +5,7 @@ const checkPayment = async (req, res) => {
 
     const dbRes = await knex('payment_sessions').select('processed').where({ session_id: sessionID }).limit(1);
 
+    console.log(dbRes);
     console.log('Requested ' + Date.now());
 
     res.json({ processed: dbRes[0].processed });
