@@ -6,7 +6,7 @@
 </head>
 
 <script>
-    var stripe = Stripe('pk_test_86lwwdfZzvZEwdziYQQuZvVY000eaeQdDf');
+    var stripe = Stripe('<%= STRIPE_PUBLISHABLE_KEY %>');
 
     stripe.redirectToCheckout({
         // Make the id field from the Checkout Session creation API response

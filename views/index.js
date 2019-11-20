@@ -1,11 +1,13 @@
 const knex = require('../database');
 const { Router } = require('express');
+const { STRIPE_PUBLISHABLE_KEY } = require('../config');
+
 const viewsRouter = Router();
 
 viewsRouter.get('/payment', (req, res) => {
     const sessionID = req.query.session_id;
 
-    res.render('payment', { sessionID });
+    res.render('payment', { sessionID, STRIPE_PUBLISHABLE_KEY });
 });
 
 viewsRouter.get('/success', async (req, res) => {
